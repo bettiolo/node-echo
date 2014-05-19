@@ -7,18 +7,17 @@ var port = process.env.PORT
 					|| process.env.port
 					|| process.env.OPENSHIFT_NODEJS_PORT
 					|| 3000;
-var ip = process.env.OPENSHIFT_NODEJS_IP
-					|| '0.0.0.0';
+var ip = process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 var nodeEnv = process.env.NODE_ENV || 'unknown';
 var server = http.createServer(function (req, res) {
 	var url_parts = url.parse(req.url, true);
 
 	var body = '';
-    req.on('data', function (data) {
-        body += data;
-    });
-    req.on('end', function () {
-        var formattedBody = qs.parse(body);
+	req.on('data', function (data) {
+		body += data;
+	});
+	req.on('end', function () {
+		var formattedBody = qs.parse(body);
 
 		res.writeHead(200, {'Content-Type': 'text/plain'});
 
