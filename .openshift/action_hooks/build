@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "Custom build script"
+npm install --production
