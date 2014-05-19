@@ -3,6 +3,8 @@
   "version": "0.0.1",
   "description": "node-echo",
   "main": "server.js",
+  "dependencies": {
+  },
   "devDependencies": {
     "nodemon": "*"
   },
