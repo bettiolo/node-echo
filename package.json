@@ -11,8 +11,6 @@
     "npm": "*"
   },
   "scripts": {
-    "preinstall" : "npm update npm -g && npm update -g",
-    "prestart": "npm install",
     "start": "nodemon --ignore node_modules/ server.js"
   },
   "repository": {
