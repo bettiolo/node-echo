@@ -25,7 +25,7 @@ var server = http.createServer(function (req, res) {
 		res.write('Host: ' + req.headers.host + '\n');
 		res.write('\n');
 		res.write('node.js Production Mode: ' + (nodeEnv == 'production' ? 'yes' : 'no') + '\n');
-		res.write('node.js v' + process.version + '\n');
+		res.write('node.js ' + process.version + '\n');
 		res.write('Executed by npm: ' + (startedByNpm ? 'yes' : 'no') + '\n');
 		res.write('\n');
 		res.write('HTTP/' + req.httpVersion +'\n');
