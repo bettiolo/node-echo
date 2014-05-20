@@ -52,5 +52,6 @@ var server = http.createServer(function (req, res) {
 });
 console.log('Initializing Server on ' + ip + ':' + port);
 server.listen(port,ip, function(){
-	console.log('Server running on ' + ip + ':' + port);
+	var address = server.address();
+	console.log('Server running on ' + address.address + ':' + address.port);
 });
