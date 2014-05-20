@@ -7,6 +7,7 @@ var port = process.env.PORT || process.env.port || process.env.OPENSHIFT_NODEJS_
 var ip = process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 var nodeEnv = process.env.NODE_ENV || 'unknown';
 var version = require('./package.json').version || 'unknown';
+var startedByNpm = !!process.env.npm_package_version;
 
 var server = http.createServer(function (req, res) {
 	var url_parts = url.parse(req.url, true);
@@ -24,6 +25,7 @@ var server = http.createServer(function (req, res) {
 		res.write('Host: ' + req.headers.host + '\n');
 		res.write('\n');
 		res.write('node.js Production Mode: ' + (nodeEnv == 'production' ? 'yes' : 'no') + '\n');
+		res.write('Executed by npm: ' + (startedByNpm ? 'yes' : 'no') + '\n');
 		res.write('\n');
 		res.write('HTTP/' + req.httpVersion +'\n');
 		res.write('Request headers:\n');
