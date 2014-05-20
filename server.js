@@ -50,5 +50,7 @@ var server = http.createServer(function (req, res) {
 
 	});
 });
-server.listen(port, ip);
-console.log('Server running on ' + ip + ':' + port);
+console.log('Initializing Server on ' + ip + ':' + port);
+server.listen(port,ip, function(){
+	console.log('Server running on ' + ip + ':' + port);
+});
