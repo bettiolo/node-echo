@@ -1,3 +1,4 @@
+// Variables Defined
 var util = require('util');
 var http = require('http');
 var url = require('url');
@@ -16,6 +17,8 @@ var server = http.createServer(function (req, res) {
 	req.on('data', function (data) {
 		body += data;
 	});
+
+	// Body formation
 	req.on('end', function () {
 		var formattedBody = qs.parse(body);
 
